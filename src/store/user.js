@@ -18,7 +18,9 @@ export const useUserStore = defineStore('user', {
             github_id: "",
         },
         token: "",
-        favoriteProjects: [],
+        favoriteProjects: {
+            projects: []
+        },
     }),
 
     getters: {

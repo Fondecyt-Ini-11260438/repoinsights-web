@@ -7,9 +7,9 @@
       <CardHome title="Explorar repositorios" subtitle="Publicos" buttonText="Buscar" routeName="Explorar proyectos" />
       <CardHome title="Comparar repositorios" subtitle="Privado o publico" buttonText="Buscar" routeName="dashboard" />
 
-      <Card className="col-span-12 relative" v-if="userStore.favoriteProjects.projects.length > 0">
+      <Card className="col-span-12 relative" v-if="userStore.favoriteProjects?.projects?.length > 0">
         <div class="flex justify-between mb-4 overflow-auto">
-          <h4 class="text-sm">Tus Proyectos seleccionados ({{ userStore.favoriteProjects.projects.length }})</h4>
+          <h4 class="text-sm">Tus Proyectos seleccionados ({{ userStore.favoriteProjects?.projects?.length || 0 }})</h4>
           <router-link class="text-xs font-semibold text-slate-900" :to="{ name: 'Explorar proyectos' }">
             Ver todos los proyectos
           </router-link>

@@ -74,7 +74,6 @@ import ButtonWithHelp from "@/components/Button/ButtonWithHelp.vue";
 
 import { useToast } from 'vue-toastification';
 import { useExploreStore } from "@/store/exploreProject";
-import { tooltip } from "leaflet";
 
 const toast = useToast();
 let store = useExploreStore();

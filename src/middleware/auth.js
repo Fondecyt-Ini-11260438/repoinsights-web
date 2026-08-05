@@ -5,7 +5,7 @@ export default async function auth({ next }) {
   const userStore = useUserStore(); // Crea una instancia de userStore
 
   if (userStore.token) {
-    if (userStore.favoriteProjects.length === 0) {
+    if (!userStore.favoriteProjects.projects || userStore.favoriteProjects.projects.length === 0) {
       await userStore.getFavoriteProjects();
     }
     return next();

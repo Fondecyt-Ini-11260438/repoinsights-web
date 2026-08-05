@@ -146,8 +146,21 @@ const selectRepo = (repo) => {
         projectModal.value = true
         selectedRepo.value = repo
         console.log(repo)
+    } else if (repo.added === true) {
+        removeProject(repo)
     }
+}
 
+const removeProject = (repo) => {
+    axiosClient.delete("api/github/projects/add", {
+        data: { id: repo.id }
+    }).then((response) => {
+        repo.added = false
+        toast.success(`${repo.name} eliminado con éxito!`)
+    }).catch((error) => {
+        console.log(error)
+        toast.error(`Error al eliminar ${repo.name}`)
+    })
 }
 
 const submitProject = () => {

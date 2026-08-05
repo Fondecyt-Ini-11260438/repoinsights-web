@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 COPY .env ./
 
-RUN npm ci
+RUN npm install
 COPY . .
 
 # Comando para iniciar la aplicación
